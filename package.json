@@ -1,10 +1,10 @@
 {
   "name": "smartbrain-api",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node --watch server.js"
   },
   "keywords": [],
   "author": "",

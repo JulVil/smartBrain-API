@@ -16,12 +16,14 @@ const handleApiCall = (req, res) => {
         metadata,
         (err, response) => {
             if (err) {
+                res.status(400).json('error')
                 console.log("Error: " + err);
                 return;
             }
 
             if (response.status.code !== 10000) {
                 console.log("Received failed status: " + response.status.description + "\n" + response.status.details);
+                res.status(400).json('error')
                 return;
             }
             //added the .outputs to the response data for it to be usable in the front-end
@@ -39,7 +41,7 @@ const handleImage = (req, res, postgresDB) => {
         .then(entries => {
             res.json(entries[0].entries);
         })
-        .catch(err => res.status(400).json('unable to get entries'))
+        .catch(err => res.status(400).json('Unable to get entries'))
 }
 
 module.exports = {
