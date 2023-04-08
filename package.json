@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node --watch server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "bcrypt": "^5.1.0",
     "clarifai-nodejs-grpc": "^8.0.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "knex": "^2.4.2",
     "pg": "^8.9.0"

@@ -97,10 +97,10 @@ const handleProfileDelete = (req, res, postgresDB) => {
       });
   })
   .then(() => {
-    res.status(200).json('User Deleted Successfully');
+    res.status(200).json('User deleted successfully');
   })
   .catch((err) => {
-    res.status(400).json('Error Deleting User')
+    res.status(400).json('Error deleting user')
     console.log(err);
   })
 }

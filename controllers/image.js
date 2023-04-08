@@ -1,8 +1,11 @@
 const {ClarifaiStub, grpc} = require("clarifai-nodejs-grpc");
+require('dotenv').config();
+
+const apiKey = process.env.CLARIFAI_API_KEY;
 
 const stub = ClarifaiStub.grpc();
 const metadata = new grpc.Metadata();
-metadata.set("authorization", "Key ---");
+metadata.set("authorization", `Key ${apiKey}`);
 
 //gRPC client for using Clarifai -> https://github.com/Clarifai/clarifai-nodejs-grpc
 const handleApiCall = (req, res) => {

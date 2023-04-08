@@ -4,7 +4,7 @@ const handleRegister = (req, res, postgresDB, bcrypt) => {
     const { name, email, password} = req.body;
 
     if(!email || !name || !password){
-        return res.status(400).json('incorrect form submission');
+        return res.status(400).json('Incorrect form submission');
     }
 
     //create a hash with the password given
@@ -32,7 +32,7 @@ const handleRegister = (req, res, postgresDB, bcrypt) => {
                 .then(trx.commit)//if everything above goes well, save all into tables
                 .catch(trx.rollback)//if there is an error, keep the database as before the changes
             })
-            .catch(err => res.status(400).json('unable to register'))
+            .catch(err => res.status(400).json('Unable to register'))
         })
     });
 }
